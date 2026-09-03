@@ -29,3 +29,4 @@
 ## Pages
 
 - [Homepage](https://imageuploader.xyz/): tutorial, command reference, and FAQ.
+- [Support server](https://discord.gg/nnR46wTKqS): Discord server for help, bug reports, and questions.
