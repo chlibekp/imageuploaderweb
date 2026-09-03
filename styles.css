@@ -448,12 +448,6 @@ details p {
   .terminal-out { opacity: 1; transform: none; }
 }
 
-@media (max-width: 720px) {
-  body { font-size: 16px; }
-  .nav nav a:not(.btn) { display: none; }
-  .card { width: 100%; }
-  .btn-lg { font-size: 11px; padding: 17px 22px; }
-}
 
 /* ---------- ephemeral note in terminal ---------- */
 .ephemeral { font-size: 13px; color: #6f6c8e; }
@@ -522,4 +516,133 @@ details p {
 @media (prefers-reduced-motion: reduce) {
   .drop-msg { opacity: 1; transform: none; }
   .drop .bar i { width: 100%; }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+/* anchors clear the sticky header */
+:target,
+.section,
+#top { scroll-margin-top: 84px; }
+
+/* nothing may push the page sideways */
+.terminal, .drop, .gallery-demo, .prose, .step { max-width: 100%; }
+code, .link, .terminal-body { overflow-wrap: anywhere; }
+
+/* ---------- tablet / small laptop ---------- */
+
+@media (max-width: 860px) {
+  .nav { padding: 12px 16px; }
+  .nav nav { gap: 14px; }
+  .nav nav a:not(.btn) { font-size: 14px; }
+}
+
+/* ---------- phone ---------- */
+
+@media (max-width: 720px) {
+  body { font-size: 16px; line-height: 1.65; }
+
+  :target, .section, #top { scroll-margin-top: 82px; }
+
+  /* nav: keep the links, shrink them, never wrap to two rows */
+  .nav {
+    padding: 10px 14px;
+    padding-left: max(14px, env(safe-area-inset-left));
+    padding-right: max(14px, env(safe-area-inset-right));
+    gap: 10px;
+  }
+  .brand { font-size: 11px; gap: 8px; }
+  .brand-logo { width: 30px; height: 30px; }
+  .nav nav { gap: 12px; }
+  .nav nav a:not(.btn) { font-size: 13px; }
+  .nav nav a[href="#commands"] { display: none; }
+
+  /* hero */
+  .hero { padding: 34px 18px 54px; }
+  .hero-logo-wrap { margin-bottom: 22px; }
+  .hero-logo { border-width: 3px; }
+  h1 { letter-spacing: .03em; text-shadow: 3px 3px 0 var(--blurple-d); }
+  .tagline { margin-bottom: 28px; }
+  .badges { margin-top: 26px; gap: 8px; }
+  .badges li { font-size: 8px; padding: 8px 10px; }
+
+  /* full-width stacked CTAs — thumb-sized targets */
+  .cta-row { flex-direction: column; align-items: stretch; gap: 12px; }
+  .cta-row .btn { justify-content: center; width: 100%; }
+  .btn-lg { font-size: 11px; padding: 18px 20px; }
+  .btn { box-shadow: 4px 4px 0 var(--blurple-d); }
+  .btn:hover { box-shadow: 4px 4px 0 var(--blurple-d); transform: none; }
+  .btn-ghost { box-shadow: 4px 4px 0 #1a1930; }
+
+  /* sections */
+  h2 { text-shadow: 3px 3px 0 var(--blurple-d); }
+  .section-sub { margin-bottom: 28px; font-size: 16px; }
+
+  /* steps: lighter shadow so nothing spills off-screen */
+  .steps { gap: 16px; }
+  .step {
+    padding: 24px 18px 26px;
+    box-shadow: 5px 5px 0 rgba(0,0,0,.35);
+  }
+  .step:hover { transform: none; box-shadow: 5px 5px 0 rgba(0,0,0,.35); border-color: var(--line); }
+  .step-num { font-size: 10px; padding: 7px 9px; margin-bottom: 12px; }
+  .step h3 { font-size: 12px; }
+  .step p { margin-bottom: 16px; }
+
+  /* terminal demo */
+  .terminal-body { font-size: 9px; padding: 14px; }
+  .terminal-out { padding: 14px; gap: 10px; }
+  .terminal-out img { width: 24px; height: 24px; }
+  .terminal-out b, .terminal-out p, .terminal-out p b { font-size: 13px; }
+  .ephemeral { font-size: 12px; }
+
+  /* upload demo */
+  .drop-zone { padding: 24px 16px 22px; }
+  .drop-msg { padding: 14px; gap: 10px; }
+  .drop-msg img { width: 24px; height: 24px; }
+  .drop-msg b, .drop-msg p, .drop-msg p b { font-size: 13px; }
+
+  /* gallery demo: two side-by-side cards instead of one huge stack */
+  .gallery-demo { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .card { width: auto; }
+  .card:hover { transform: none; border-color: var(--line); }
+  .card-thumb { height: 88px; }
+  .card-meta { padding: 11px; }
+  .card-meta h4 { font-size: 13px; }
+  .card-sub { font-size: 6px; margin-bottom: 10px; }
+  .card-btns { gap: 4px; }
+  .card-btns span { font-size: 6px; padding: 8px 3px; }
+
+  /* commands */
+  .cmd { padding: 20px 18px; }
+  .cmd:hover { transform: none; }
+
+  /* faq — 48px tap targets */
+  summary { padding: 16px 18px; font-size: 16px; }
+  details p { padding: 0 18px 18px; }
+
+  /* final cta + footer */
+  .final-cta .cta-row { max-width: 340px; margin: 0 auto; }
+  .footer { padding: 28px 18px calc(28px + env(safe-area-inset-bottom)); font-size: 13px; }
+}
+
+/* ---------- small phone ---------- */
+
+@media (max-width: 420px) {
+  .brand span { display: none; }
+  .nav nav a[href="#tutorial"] { display: none; }
+  h1 { font-size: 22px; letter-spacing: .02em; }
+  .gallery-demo { grid-template-columns: 1fr; }
+  .card-thumb { height: 108px; }
+  .card-sub, .card-btns span { font-size: 7px; }
+  .terminal-body { font-size: 8px; }
+  .step { padding: 20px 15px 22px; }
+  .badges li { font-size: 7px; }
+}
+
+/* pointer-coarse: no hover lift anywhere */
+@media (hover: none) {
+  .step:hover, .cmd:hover, .card:hover, .brand:hover .brand-logo { transform: none; }
 }
