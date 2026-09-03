@@ -454,3 +454,72 @@ details p {
   .card { width: 100%; }
   .btn-lg { font-size: 11px; padding: 17px 22px; }
 }
+
+/* ---------- ephemeral note in terminal ---------- */
+.ephemeral { font-size: 13px; color: #6f6c8e; }
+
+/* ---------- step 03: browser upload demo ---------- */
+
+.drop { max-width: 620px; }
+
+.drop-zone {
+  position: relative;
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  padding: 30px 22px 26px;
+  background: var(--bg-2);
+  border: 3px dashed var(--line);
+  text-align: center;
+  transition: border-color .3s, background .3s;
+}
+.drop.active .drop-zone { border-color: var(--blurple); background: rgba(88,101,242,.07); }
+.drop.done  .drop-zone { border-style: solid; border-color: #3ba55d; }
+
+.drop-icon {
+  font-family: var(--pixel); font-size: 22px; color: var(--blurple);
+  line-height: 1;
+  animation: hop 1.6s ease-in-out infinite;
+}
+@keyframes hop {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-7px); }
+}
+.drop.done .drop-icon { animation: none; color: #3ba55d; }
+
+.drop-zone b {
+  font-family: var(--pixel); font-size: 11px; text-transform: uppercase;
+  letter-spacing: .06em;
+}
+.drop-zone small { color: var(--muted); font-size: 13px; }
+
+.bar {
+  width: 100%; max-width: 340px; height: 14px; margin-top: 12px;
+  background: var(--panel); border: 2px solid var(--line);
+}
+.bar i {
+  display: block; height: 100%; width: 0;
+  background: repeating-linear-gradient(
+    90deg, var(--blurple) 0 8px, var(--blurple-2) 8px 16px
+  );
+  transition: width 2.2s linear;
+}
+.drop.active .bar i { width: 100%; }
+.drop.done   .bar i { background: #3ba55d; }
+
+.drop-msg {
+  display: flex; gap: 12px; align-items: flex-start;
+  padding: 16px 18px;
+  border: 3px solid var(--line); border-top: 0;
+  background: rgba(88,101,242,.06);
+  opacity: 0; transform: translateY(8px);
+  transition: opacity .4s, transform .4s;
+}
+.drop-msg.show { opacity: 1; transform: none; }
+.drop-msg img { border: 2px solid var(--line); flex: none; }
+.drop-msg b { font-size: 14px; }
+.drop-msg p { margin: 6px 0 0; font-size: 14px; color: var(--muted); }
+.drop-msg p b { color: var(--text); }
+
+@media (prefers-reduced-motion: reduce) {
+  .drop-msg { opacity: 1; transform: none; }
+  .drop .bar i { width: 100%; }
+}

@@ -74,6 +74,28 @@
     }
   }
 
+  /* ---------- step 03: browser upload demo ---------- */
+  var drop = document.querySelector('[data-drop]');
+  if (drop) {
+    var msg = drop.querySelector('.drop-msg');
+    var run = function () {
+      if (reduced) { drop.classList.add('active', 'done'); msg.classList.add('show'); return; }
+      drop.classList.add('active');
+      setTimeout(function () {
+        drop.classList.add('done');
+        drop.querySelector('.drop-zone b').textContent = 'Upload complete';
+        setTimeout(function () { msg.classList.add('show'); }, 350);
+      }, 2300);
+    };
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries, obs) {
+        if (entries[0].isIntersecting) { run(); obs.disconnect(); }
+      }, { threshold: 0.4 }).observe(drop);
+    } else {
+      run();
+    }
+  }
+
   /* ---------- fake COPY buttons in the gallery demo ---------- */
   document.querySelectorAll('.card-btns span').forEach(function (btn) {
     btn.addEventListener('click', function () {

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ImageUploader — Bypass Discord Upload Limits & Send Big Files Without Nitro</title>
-<meta name="description" content="ImageUploader is a free Discord bot that bypasses the 10MB Discord upload limit. Run /upload to send big files without Nitro, get an instant shareable link, and browse everything with /gallery.">
+<meta name="description" content="ImageUploader is a free Discord bot that bypasses the 10MB Discord upload limit. Run /upload, drop your file on the link the bot gives you, and it posts straight into the channel. Send big files without Nitro and browse them with /gallery.">
 <meta name="keywords" content="bypass discord upload limits, big files without nitro discord, discord file size limit bot, send large files on discord free, discord upload limit bypass bot, discord image host bot">
 <meta name="author" content="ImageUploader">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="ImageUploader">
 <meta property="og:url" content="https://imageuploader.xyz/">
 <meta property="og:title" content="ImageUploader — Bypass Discord Upload Limits Without Nitro">
-<meta property="og:description" content="Free Discord bot. Run /upload to send big files past the 10MB Discord limit, get an instant link, and manage uploads with /gallery.">
+<meta property="og:description" content="Free Discord bot. Run /upload, drop your file on the bot's upload page, and it lands in the channel — past the 10MB Discord limit, no Nitro.">
 <meta property="og:image" content="https://imageuploader.xyz/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -51,7 +51,7 @@
       "operatingSystem": "Discord (Web, Windows, macOS, Linux, iOS, Android)",
       "url": "https://imageuploader.xyz/",
       "image": "https://imageuploader.xyz/assets/logo.png",
-      "description": "ImageUploader is a free Discord bot that bypasses Discord's upload size limit. Use /upload to share big files without Nitro and /gallery to browse, copy, or delete your uploads.",
+      "description": "ImageUploader is a free Discord bot that bypasses Discord's upload size limit. Run /upload to get a private upload page, drop your file there, and the bot posts it into the channel. Use /gallery to browse, copy, or delete your uploads.",
       "featureList": [
         "Bypass the 10MB Discord upload limit",
         "Send big files without Nitro",
@@ -84,11 +84,17 @@
           "@type": "HowToStep",
           "position": 2,
           "name": "Run /upload",
-          "text": "Type /upload in any channel and attach your file. ImageUploader stores it off-Discord and replies with a direct link you can paste anywhere."
+          "text": "Type /upload in any channel. The bot replies with a private upload link that only you can see."
         },
         {
           "@type": "HowToStep",
           "position": 3,
+          "name": "Upload your file on the link",
+          "text": "Open the link in your browser and drop the file in. The file is stored outside Discord, so Discord's attachment size limit never applies. When the upload finishes, the bot posts the file and its direct link back into the channel where you ran the command."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
           "name": "Run /gallery",
           "text": "Type /gallery to open your personal web gallery, where you can open, copy the link to, or delete any file you have uploaded."
         }
@@ -103,7 +109,7 @@
           "name": "How do I bypass Discord's upload limit?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Upload the file through a bot instead of the Discord client. With ImageUploader you run /upload, attach your file, and the bot stores it externally and posts a direct link back into the channel. Discord only ever sends the link, so its 10MB attachment cap never applies to the file itself."
+            "text": "Send the file outside Discord and let a bot post the link. With ImageUploader you run /upload, the bot replies with a private upload link, you drop your file on that page in your browser, and the bot then posts the file and its direct link into the channel. The file never travels through Discord as an attachment, so the 10MB cap never applies to it."
           }
         },
         {
@@ -186,7 +192,7 @@
 
       <p class="tagline reveal">
         <strong>ImageUploader</strong> is a free Discord bot that lets you send
-        <strong>big files without Nitro</strong>. Run <code>/upload</code>, get a link, done.
+        <strong>big files without Nitro</strong>. Run <code>/upload</code>, drop your file on the link, done.
       </p>
 
       <div class="cta-row reveal">
@@ -208,7 +214,7 @@
   <!-- TUTORIAL -->
   <section id="tutorial" class="section">
     <h2 class="reveal">How to use it</h2>
-    <p class="section-sub reveal">Three steps. No config files, no dashboards, no subscription.</p>
+    <p class="section-sub reveal">Four steps. No config files, no dashboards, no subscription.</p>
 
     <ol class="steps">
       <li class="step reveal">
@@ -221,15 +227,15 @@
       <li class="step reveal">
         <span class="step-num" aria-hidden="true">02</span>
         <h3>Run <code>/upload</code></h3>
-        <p>Attach any file — a 400MB video, a fat ZIP, a screenshot. The bot stores it outside Discord and replies with a direct link, so the upload cap never touches it.</p>
-        <div class="terminal" data-type="/upload file: my-4k-clip.mp4">
+        <p>Type <code>/upload</code> in any channel. The bot answers with a private upload link — only you can see it. No file goes through Discord, so the attachment cap is never involved.</p>
+        <div class="terminal" data-type="/upload">
           <div class="terminal-bar" aria-hidden="true"><i></i><i></i><i></i></div>
           <pre class="terminal-body"><code><span class="prompt">›</span> <span class="typed"></span><span class="caret" aria-hidden="true"></span></code></pre>
           <div class="terminal-out">
             <img src="assets/favicon-64.png" alt="" width="28" height="28" aria-hidden="true">
             <div>
               <b>ImageUploader</b> <span class="tag">BOT</span>
-              <p>Uploaded <b>my-4k-clip.mp4</b> — 412 MB<br><span class="link">https://imageuploader.xyz/f/9xk2qa</span></p>
+              <p>Your upload page is ready:<br><span class="link">https://imageuploader.xyz/u/9xk2qa</span><br><span class="ephemeral">Only you can see this • link expires after use</span></p>
             </div>
           </div>
         </div>
@@ -237,6 +243,28 @@
 
       <li class="step reveal">
         <span class="step-num" aria-hidden="true">03</span>
+        <h3>Drop your file</h3>
+        <p>Open the link in your browser and drag the file in — a 400MB video, a fat ZIP, a screenshot. When the upload finishes, the bot posts it straight back into the channel you ran the command in.</p>
+
+        <div class="drop" data-drop>
+          <div class="drop-zone">
+            <span class="drop-icon" aria-hidden="true">↑</span>
+            <b>Drop file here</b>
+            <small>my-4k-clip.mp4 — 412 MB</small>
+            <div class="bar" aria-hidden="true"><i></i></div>
+          </div>
+          <div class="drop-msg">
+            <img src="assets/favicon-64.png" alt="" width="28" height="28" aria-hidden="true">
+            <div>
+              <b>ImageUploader</b> <span class="tag">BOT</span>
+              <p>Uploaded by <b>@you</b> — <b>my-4k-clip.mp4</b> — 412 MB<br><span class="link">https://imageuploader.xyz/f/9xk2qa</span></p>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="step reveal">
+        <span class="step-num" aria-hidden="true">04</span>
         <h3>Run <code>/gallery</code></h3>
         <p>Opens your personal gallery of every file you have sent. Open it, copy the link, or delete it — thumbnails and all.</p>
         <div class="gallery-demo" aria-hidden="true">
@@ -269,7 +297,7 @@
     <div class="cmd-grid">
       <div class="cmd reveal">
         <h3><code>/upload</code></h3>
-        <p>Attach a file and get a shareable link back in the channel. Works for video, images, GIFs, audio, PDFs, and archives — past Discord's 10MB free cap, no Nitro.</p>
+        <p>Returns a private upload page. Drop your file there and the bot posts it plus a shareable link into the channel. Works for video, images, GIFs, audio, PDFs, and archives — past Discord's 10MB free cap, no Nitro.</p>
       </div>
       <div class="cmd reveal">
         <h3><code>/gallery</code></h3>
@@ -283,8 +311,8 @@
     <h2 class="reveal">Why the Discord upload limit exists — and how to get around it</h2>
     <div class="prose reveal">
       <p>Discord caps attachments at <strong>10MB on a free account</strong>. Nitro Basic pushes that to 50MB, full Nitro to 500MB, and Server Boost level 2 or 3 lifts the per-server cap to 50MB or 100MB. If you are not paying, the cap bites the moment you try to send a screen recording, a game clip, or a modpack.</p>
-      <p>The workaround is to stop sending the <em>file</em> and start sending a <em>link</em>. ImageUploader stores your file on its own host and posts a direct URL back into the channel. Discord sees a short piece of text, so its attachment limit never applies. Anyone in the channel — Nitro or not, phone or desktop — clicks and gets the full-quality original, with no re-compression of your video.</p>
-      <p>Compared with dumping files on a generic file host, the bot never makes you leave Discord: no browser tab, no login, no ad wall, no seven-day expiry. Upload with <code>/upload</code>, find it again later with <code>/gallery</code>.</p>
+      <p>The workaround is to stop sending the <em>file</em> and start sending a <em>link</em>. ImageUploader hands you a private upload page, takes the file straight from your browser to its own host, and posts a direct URL back into the channel. Discord sees a short piece of text, so its attachment limit never applies. Anyone in the channel — Nitro or not, phone or desktop — clicks and gets the full-quality original, with no re-compression of your video.</p>
+      <p>Compared with dumping files on a generic file host, the bot never makes you leave Discord: no browser tab, no login, no ad wall, no seven-day expiry. Start with <code>/upload</code>, finish in the browser, find it again later with <code>/gallery</code>.</p>
     </div>
   </section>
 
@@ -294,7 +322,7 @@
     <div class="faq">
       <details class="reveal" open>
         <summary>How do I bypass Discord's upload limit?</summary>
-        <p>Upload through a bot instead of the Discord client. Run <code>/upload</code>, attach your file, and ImageUploader hosts it and posts a direct link. Discord only carries the link, so the 10MB attachment cap never applies to the file.</p>
+        <p>Send the file outside Discord and let the bot post the link. Run <code>/upload</code>, the bot DMs you a private upload page, you drop your file there in the browser, and the bot posts the file plus its direct link into the channel. Discord only ever carries the link, so the 10MB attachment cap never applies.</p>
       </details>
       <details class="reveal">
         <summary>Can I send big files on Discord without Nitro?</summary>

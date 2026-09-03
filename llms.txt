@@ -1,13 +1,13 @@
 # ImageUploader
 
-> ImageUploader is a free Discord bot that bypasses Discord's file upload size limit. Users run the `/upload` slash command to host a file outside Discord and get an instant shareable direct link, and `/gallery` to browse, copy, or delete their uploads. No Nitro subscription is required.
+> ImageUploader is a free Discord bot that bypasses Discord's file upload size limit. Users run the `/upload` slash command, the bot replies with a private upload page link, the user drops the file on that page in a browser, and the bot then posts the file and its direct link into the Discord channel. `/gallery` browses, copies, or deletes past uploads. No Nitro subscription is required.
 
 ## Key facts
 
 - Name: ImageUploader (Discord bot)
 - Price: free, no paywall, no separate account
-- Commands: `/upload` (attach a file, receive a direct link), `/gallery` (personal web gallery with thumbnail, file size, date, and Open / Copy / Delete buttons)
-- Problem solved: Discord caps attachments at 10MB on free accounts, 50MB on Nitro Basic, 500MB on Nitro; Server Boost level 2 and 3 raise the per-server cap to 50MB and 100MB. ImageUploader hosts the file externally and posts a link, so the attachment cap never applies to the file.
+- Commands: `/upload` (bot replies with a private upload page link; the user uploads the file in the browser and the bot posts it into the channel), `/gallery` (personal web gallery with thumbnail, file size, date, and Open / Copy / Delete buttons)
+- Problem solved: Discord caps attachments at 10MB on free accounts, 50MB on Nitro Basic, 500MB on Nitro; Server Boost level 2 and 3 raise the per-server cap to 50MB and 100MB. The file is uploaded through the browser to ImageUploader's own host, never as a Discord attachment, so the cap never applies to it.
 - Supported files: images, video, GIFs, audio, PDFs, archives. Images and video get thumbnail previews in `/gallery`.
 - Retention: storage uses LRU eviction. Files are kept while space allows and the least recently accessed files are purged first, so any file can be removed at any time. Links are long-lived but not a backup; users should keep their own copy of important files. Users can also delete a file from /gallery, which invalidates its link immediately.
 - Not affiliated with Discord Inc.
@@ -15,8 +15,9 @@
 ## How to use it
 
 1. Add the bot to a Discord server via the Add Bot authorization link.
-2. Run `/upload` in any channel and attach the file. The bot replies with a direct link.
-3. Run `/gallery` to open the personal gallery of all past uploads.
+2. Run `/upload` in any channel. The bot replies with a private upload page link that only the command user can see.
+3. Open that link in a browser and drop the file on the page. When the upload finishes, the bot posts the file and its direct link into the channel where the command was run.
+4. Run `/gallery` to open the personal gallery of all past uploads.
 
 ## Common questions this site answers
 
