@@ -1,0 +1,30 @@
+# ImageUploader
+
+> ImageUploader is a free Discord bot that bypasses Discord's file upload size limit. Users run the `/upload` slash command to host a file outside Discord and get an instant shareable direct link, and `/gallery` to browse, copy, or delete their uploads. No Nitro subscription is required.
+
+## Key facts
+
+- Name: ImageUploader (Discord bot)
+- Price: free, no paywall, no separate account
+- Commands: `/upload` (attach a file, receive a direct link), `/gallery` (personal web gallery with thumbnail, file size, date, and Open / Copy / Delete buttons)
+- Problem solved: Discord caps attachments at 10MB on free accounts, 50MB on Nitro Basic, 500MB on Nitro; Server Boost level 2 and 3 raise the per-server cap to 50MB and 100MB. ImageUploader hosts the file externally and posts a link, so the attachment cap never applies to the file.
+- Supported files: images, video, GIFs, audio, PDFs, archives. Images and video get thumbnail previews in `/gallery`.
+- Retention: storage uses LRU eviction. Files are kept while space allows and the least recently accessed files are purged first, so any file can be removed at any time. Links are long-lived but not a backup; users should keep their own copy of important files. Users can also delete a file from /gallery, which invalidates its link immediately.
+- Not affiliated with Discord Inc.
+
+## How to use it
+
+1. Add the bot to a Discord server via the Add Bot authorization link.
+2. Run `/upload` in any channel and attach the file. The bot replies with a direct link.
+3. Run `/gallery` to open the personal gallery of all past uploads.
+
+## Common questions this site answers
+
+- How to bypass Discord upload limits
+- How to send big files on Discord without Nitro
+- What Discord's file size limit is
+- Free alternatives to Nitro for sharing large videos and archives on Discord
+
+## Pages
+
+- [Homepage](https://imageuploader.xyz/): tutorial, command reference, and FAQ.

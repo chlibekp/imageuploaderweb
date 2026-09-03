@@ -1,0 +1,13 @@
+{
+  "name": "ImageUploader — Discord upload limit bypass bot",
+  "short_name": "ImageUploader",
+  "description": "Free Discord bot to send big files without Nitro. /upload and /gallery.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d0c17",
+  "theme_color": "#5865f2",
+  "icons": [
+    { "src": "/assets/logo-256.png", "sizes": "256x256", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/logo-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}
