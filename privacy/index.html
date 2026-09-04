@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — ImageUploader</title>
+<meta name="description" content="How ImageUploader, the free Discord bot for sending large files, handles your data and uploaded files.">
+<meta name="theme-color" content="#5865f2">
+<link rel="canonical" href="https://imageuploader.xyz/privacy/">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ImageUploader">
+<meta property="og:url" content="https://imageuploader.xyz/privacy/">
+<meta property="og:title" content="Privacy Policy — ImageUploader">
+<meta property="og:description" content="How ImageUploader handles your data and uploaded files.">
+<meta property="og:image" content="https://imageuploader.xyz/assets/og.png">
+
+<link rel="icon" type="image/png" href="/assets/favicon-64.png">
+<link rel="apple-touch-icon" href="/assets/logo-256.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/styles.css">
+
+<script defer src="https://a.itnetic.com/script.js" data-website-id="82c5a8d4-4e17-4071-bb90-5eceb2d6ef47"></script>
+
+<style>
+  .legal { max-width: 76ch; margin: 0 auto; padding: 40px 0 20px; }
+  .legal h1 { font-size: clamp(20px, 4vw, 30px); line-height: 1.5; margin: 0 0 10px; }
+  .legal .updated { color: var(--muted); font-size: 15px; margin: 0 0 40px; }
+  .legal h2 {
+    font-family: var(--pixel); font-weight: 400; font-size: 15px;
+    line-height: 1.6; margin: 40px 0 14px; color: var(--text);
+  }
+  .legal p, .legal li { color: var(--muted); }
+  .legal p { margin: 0 0 16px; }
+  .legal strong { color: var(--text); }
+  .legal ul { margin: 0 0 16px; padding-left: 22px; }
+  .legal li { margin: 0 0 8px; }
+  .legal a { color: var(--blurple-2); }
+</style>
+</head>
+<body>
+
+<canvas id="stars" aria-hidden="true"></canvas>
+<div class="scanlines" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <a class="brand" href="/">
+    <img src="/assets/favicon-64.png" alt="ImageUploader bot logo" width="36" height="36" class="brand-logo">
+    <span>ImageUploader</span>
+  </a>
+  <nav aria-label="Primary">
+    <a href="/#tutorial">How it works</a>
+    <a href="/#commands">Commands</a>
+    <a href="/#faq">FAQ</a>
+    <a href="https://discord.gg/nnR46wTKqS" target="_blank" rel="noopener">Support</a>
+    <a class="btn btn-sm" href="/#add" data-invite>Add Bot</a>
+  </nav>
+</header>
+
+<main id="top">
+  <article class="section legal">
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: 4 September 2026</p>
+
+    <p>This Privacy Policy explains what data the ImageUploader Discord bot and the website at imageuploader.xyz (together, the "Service") collect, why, and what you can do about it. ImageUploader is not affiliated with Discord Inc.</p>
+
+    <h2>1. Data we process</h2>
+    <p><strong>Discord identifiers.</strong> When you run a command, Discord gives the bot your Discord user ID, and the relevant server (guild) ID and channel ID. We store your user ID to link uploads to your gallery and to enforce limits. We do not store your Discord password or email.</p>
+    <p><strong>Uploaded files.</strong> The files you upload through an upload page are stored on our hosting infrastructure so they can be served over a direct link. We also store file metadata: original filename, file size, content type, upload date, a generated link identifier, and generated thumbnails or previews for images and video.</p>
+    <p><strong>Technical logs.</strong> Our servers and hosting providers automatically record request data such as IP address, user agent, timestamps, and error information. This is used for security, abuse prevention, rate limiting, and debugging, and is kept only for a short period.</p>
+    <p><strong>Website analytics.</strong> The website uses a privacy-focused analytics script (itnetic) that collects aggregate, non-identifying usage statistics such as page views and referrers. It does not use cookies for tracking and does not build cross-site profiles.</p>
+
+    <h2>2. Why we process it</h2>
+    <ul>
+      <li>to run the core features — generating upload pages, storing and serving files, and showing your gallery;</li>
+      <li>to enforce storage limits, rate limits, and these terms;</li>
+      <li>to keep the Service secure and investigate abuse;</li>
+      <li>to understand aggregate website usage.</li>
+    </ul>
+    <p>The legal bases, where applicable, are performance of the service you request and our legitimate interest in operating and protecting it.</p>
+
+    <h2>3. Who can see your files</h2>
+    <p>Direct file links are <strong>unguessable but not secret</strong>. Anyone who has a link can open the file without logging in, and the bot posts the link into the Discord channel where you ran the command. Do not upload anything through the Service that you would not want a link-holder to see. Your <strong>/gallery</strong> is private to your Discord account.</p>
+
+    <h2>4. Sharing</h2>
+    <p>We do not sell your data. We share data only with:</p>
+    <ul>
+      <li><strong>Infrastructure providers</strong> (hosting, storage, CDN) that run the Service on our behalf;</li>
+      <li><strong>Discord</strong>, as an inherent part of the bot delivering messages and links;</li>
+      <li><strong>Authorities</strong>, where we are required by law or must act on a valid legal request or a report of illegal content.</li>
+    </ul>
+
+    <h2>5. Retention</h2>
+    <p>Files are kept while storage allows and are removed on a least-recently-used basis, so any file may be deleted at any time. You can delete any file immediately from <strong>/gallery</strong>, which also invalidates its link. When a file is deleted, its metadata and thumbnails are removed within a reasonable period, subject to backups and logs cycling out. Technical logs are kept only briefly.</p>
+
+    <h2>6. Your rights</h2>
+    <p>Depending on where you live, you may have the right to access, correct, delete, or export your data, or to object to certain processing. You can delete your uploads yourself in <strong>/gallery</strong>. For a full account deletion, or any other request, contact us through the support server below. We may need to verify your Discord identity before acting.</p>
+
+    <h2>7. Children</h2>
+    <p>The Service is not directed to children below Discord's minimum age for their country. We do not knowingly collect data from them. If you believe a child has used the Service, contact us and we will remove the relevant data.</p>
+
+    <h2>8. Security</h2>
+    <p>We take reasonable measures to protect data, but no system is completely secure. We cannot guarantee the security of data transmitted to or stored by the Service.</p>
+
+    <h2>9. International transfers</h2>
+    <p>Data may be processed on servers located in countries other than yours. Where required, we rely on appropriate safeguards for such transfers.</p>
+
+    <h2>10. Changes</h2>
+    <p>We may update this Policy from time to time. The "Last updated" date shows the current version. Continuing to use the Service after a change means you accept the updated Policy.</p>
+
+    <h2>11. Contact</h2>
+    <p>Privacy questions and data requests go through the <a href="https://discord.gg/nnR46wTKqS" target="_blank" rel="noopener">ImageUploader support server</a>.</p>
+
+    <p style="margin-top:40px"><a href="/terms/">Terms of Service</a> &nbsp;·&nbsp; <a href="/">Home</a></p>
+  </article>
+</main>
+
+<footer class="footer">
+  <p>ImageUploader — a free Discord bot for sending big files without Nitro.</p>
+  <p><a href="/terms/">Terms of Service</a> · <a href="/privacy/">Privacy Policy</a> · <a href="https://discord.gg/nnR46wTKqS" target="_blank" rel="noopener">Support server</a></p>
+  <p class="muted">Not affiliated with Discord Inc.</p>
+</footer>
+
+<script src="/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terms of Service — ImageUploader</title>
+<meta name="description" content="The terms that govern use of ImageUploader, the free Discord bot for sending files past Discord's upload limit.">
+<meta name="theme-color" content="#5865f2">
+<link rel="canonical" href="https://imageuploader.xyz/terms/">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ImageUploader">
+<meta property="og:url" content="https://imageuploader.xyz/terms/">
+<meta property="og:title" content="Terms of Service — ImageUploader">
+<meta property="og:description" content="The terms that govern use of ImageUploader.">
+<meta property="og:image" content="https://imageuploader.xyz/assets/og.png">
+
+<link rel="icon" type="image/png" href="/assets/favicon-64.png">
+<link rel="apple-touch-icon" href="/assets/logo-256.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/styles.css">
+
+<script defer src="https://a.itnetic.com/script.js" data-website-id="82c5a8d4-4e17-4071-bb90-5eceb2d6ef47"></script>
+
+<style>
+  .legal { max-width: 76ch; margin: 0 auto; padding: 40px 0 20px; }
+  .legal h1 { font-size: clamp(20px, 4vw, 30px); line-height: 1.5; margin: 0 0 10px; }
+  .legal .updated { color: var(--muted); font-size: 15px; margin: 0 0 40px; }
+  .legal h2 {
+    font-family: var(--pixel); font-weight: 400; font-size: 15px;
+    line-height: 1.6; margin: 40px 0 14px; color: var(--text);
+  }
+  .legal p, .legal li { color: var(--muted); }
+  .legal p { margin: 0 0 16px; }
+  .legal strong { color: var(--text); }
+  .legal ul { margin: 0 0 16px; padding-left: 22px; }
+  .legal li { margin: 0 0 8px; }
+  .legal a { color: var(--blurple-2); }
+</style>
+</head>
+<body>
+
+<canvas id="stars" aria-hidden="true"></canvas>
+<div class="scanlines" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <a class="brand" href="/">
+    <img src="/assets/favicon-64.png" alt="ImageUploader bot logo" width="36" height="36" class="brand-logo">
+    <span>ImageUploader</span>
+  </a>
+  <nav aria-label="Primary">
+    <a href="/#tutorial">How it works</a>
+    <a href="/#commands">Commands</a>
+    <a href="/#faq">FAQ</a>
+    <a href="https://discord.gg/nnR46wTKqS" target="_blank" rel="noopener">Support</a>
+    <a class="btn btn-sm" href="/#add" data-invite>Add Bot</a>
+  </nav>
+</header>
+
+<main id="top">
+  <article class="section legal">
+    <h1>Terms of Service</h1>
+    <p class="updated">Last updated: 4 September 2026</p>
+
+    <p>These Terms of Service ("Terms") govern your use of the ImageUploader Discord bot, the website at imageuploader.xyz, the upload pages it generates, and the direct file links it produces (together, the "Service"). By adding the bot to a Discord server, running its commands, or uploading a file through it, you agree to these Terms. If you do not agree, do not use the Service.</p>
+
+    <h2>1. What the Service does</h2>
+    <p>ImageUploader is a free bot that stores files outside Discord so they can be shared past Discord's attachment size limit. You run <strong>/upload</strong>, the bot gives you a private upload page, you upload a file in your browser, and the bot posts the file and a direct link back into the channel. <strong>/gallery</strong> lets you browse, copy links to, or delete your past uploads.</p>
+    <p>The Service is provided free of charge. There is no paid tier, and no account is created beyond your existing Discord login.</p>
+
+    <h2>2. Eligibility</h2>
+    <p>You must meet Discord's own minimum age requirement for your country and comply with the <a href="https://discord.com/terms" target="_blank" rel="noopener">Discord Terms of Service</a> and <a href="https://discord.com/guidelines" target="_blank" rel="noopener">Community Guidelines</a> at all times while using the Service. ImageUploader is not affiliated with, endorsed by, or operated by Discord Inc.</p>
+
+    <h2>3. Your content</h2>
+    <p>You keep all ownership rights in the files you upload. You grant ImageUploader a limited licence to store, host, process, generate thumbnails and previews for, and transmit those files solely to operate the Service.</p>
+    <p>You are solely responsible for the files you upload and for the links you share. By uploading a file you confirm that:</p>
+    <ul>
+      <li>you own the file or have the rights and permissions needed to upload and share it;</li>
+      <li>the file and its distribution do not break any law or infringe anyone's rights;</li>
+      <li>sharing the file does not violate the Discord Terms of Service or Community Guidelines.</li>
+    </ul>
+
+    <h2>4. Acceptable use</h2>
+    <p>You must not use the Service to store, share, or link to content that:</p>
+    <ul>
+      <li>is illegal, or promotes or facilitates illegal activity;</li>
+      <li>is child sexual abuse material, or sexualises minors in any way;</li>
+      <li>infringes copyright, trademark, or other intellectual property rights;</li>
+      <li>contains malware, viruses, or other harmful code;</li>
+      <li>is used for phishing, fraud, spam, or deceptive redirects;</li>
+      <li>harasses, threatens, defames, or doxxes any person;</li>
+      <li>contains non-consensual intimate imagery.</li>
+    </ul>
+    <p>You must not abuse the Service's infrastructure — for example by automating bulk uploads, attempting to bypass rate limits or storage limits, probing for vulnerabilities without permission, or using the direct links as a content delivery network or a permanent backup store.</p>
+
+    <h2>5. Storage, retention, and availability</h2>
+    <p>Storage is limited and managed with least-recently-used (LRU) eviction. When space runs low, the least recently accessed files are deleted first. <strong>Any file may be removed at any time, without notice.</strong> Links are intended to be long-lived but are not guaranteed to persist. The Service is not a backup service — keep your own copy of anything important.</p>
+    <p>You can delete any of your files from <strong>/gallery</strong>; doing so invalidates the link immediately.</p>
+    <p>The Service is provided on an "as is" and "as available" basis. It may be slow, interrupted, or discontinued at any time, in whole or in part, without notice or liability.</p>
+
+    <h2>6. Enforcement</h2>
+    <p>We may remove any file, invalidate any link, and block any user or Discord server from the Service at any time, at our sole discretion, including for suspected breach of these Terms. Where required by law we will respond to valid legal requests and reports of illegal content.</p>
+
+    <h2>7. Third-party services</h2>
+    <p>The Service runs on top of Discord and relies on third-party hosting and infrastructure providers. Your use of Discord is governed by Discord's own terms. We are not responsible for the acts or omissions of third-party providers.</p>
+
+    <h2>8. Disclaimers</h2>
+    <p>To the fullest extent permitted by law, the Service is provided without warranties of any kind, express or implied, including fitness for a particular purpose, availability, accuracy, and non-infringement. We do not warrant that files will be retained, that links will keep working, or that the Service will be secure or error-free.</p>
+
+    <h2>9. Limitation of liability</h2>
+    <p>To the fullest extent permitted by law, ImageUploader and the people who operate it will not be liable for any indirect, incidental, special, consequential, or punitive damages, or for any loss of data, files, profits, or goodwill, arising out of or relating to your use of the Service. Because the Service is provided free of charge, our total aggregate liability to you for any claim relating to the Service is limited to USD 0.</p>
+
+    <h2>10. Indemnity</h2>
+    <p>You agree to indemnify and hold harmless ImageUploader and the people who operate it from any claim, demand, loss, or expense (including reasonable legal fees) arising from the files you upload, the links you share, or your breach of these Terms.</p>
+
+    <h2>11. Changes to these Terms</h2>
+    <p>We may update these Terms from time to time. The "Last updated" date at the top shows the current version. Material changes take effect when posted; continuing to use the Service after that means you accept the new Terms.</p>
+
+    <h2>12. Governing law</h2>
+    <p>These Terms are governed by the laws applicable at the place where the operator of the Service is established, without regard to conflict-of-law rules. The courts of that place have exclusive jurisdiction over any dispute, except where mandatory consumer-protection law gives you the right to bring proceedings elsewhere.</p>
+
+    <h2>13. Contact</h2>
+    <p>Questions about these Terms, content reports, and legal requests go through the <a href="https://discord.gg/nnR46wTKqS" target="_blank" rel="noopener">ImageUploader support server</a>.</p>
+
+    <p style="margin-top:40px"><a href="/privacy/">Privacy Policy</a> &nbsp;·&nbsp; <a href="/">Home</a></p>
+  </article>
+</main>
+
+<footer class="footer">
+  <p>ImageUploader — a free Discord bot for sending big files without Nitro.</p>
+  <p><a href="/terms/">Terms of Service</a> · <a href="/privacy/">Privacy Policy</a> · <a href="https://discord.gg/nnR46wTKqS" target="_blank" rel="noopener">Support server</a></p>
+  <p class="muted">Not affiliated with Discord Inc.</p>
+</footer>
+
+<script src="/script.js"></script>
+</body>
+</html>
