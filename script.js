@@ -106,6 +106,64 @@
     });
   });
 
+  /* ---------- live stats from the API ---------- */
+  var statsSection = document.querySelector('[data-stats]');
+  if (statsSection) {
+    var statEl = function (key) {
+      return statsSection.querySelector('[data-stat="' + key + '"]');
+    };
+
+    /* "1 command" not "1 commands" */
+    var plural = function (key, value) {
+      var el = statsSection.querySelector('[data-plural="' + key + '"]');
+      if (el && value === 1) el.textContent = el.textContent.replace(/s$/, '');
+    };
+
+    var countUp = function (el, value) {
+      if (reduced) { el.textContent = value.toLocaleString(); return; }
+      var start = performance.now();
+      var dur = 900;
+      var step = function (now) {
+        var p = Math.min((now - start) / dur, 1);
+        var eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(value * eased).toLocaleString();
+        if (p < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    };
+
+    var topCommand = function (byCommand) {
+      var best = null;
+      Object.keys(byCommand || {}).forEach(function (name) {
+        if (!best || byCommand[name] > byCommand[best]) best = name;
+      });
+      return best ? '/' + best : null;
+    };
+
+    fetch('https://u.imageuploader.xyz/api/stats', { cache: 'no-store' })
+      .then(function (res) {
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        return res.json();
+      })
+      .then(function (data) {
+        if (typeof data.commands !== 'number' || typeof data.activeUsers !== 'number') {
+          throw new Error('unexpected payload');
+        }
+        statsSection.hidden = false;
+        statsSection.querySelectorAll('.reveal').forEach(function (el) {
+          el.classList.add('in');
+        });
+        countUp(statEl('commands'), data.commands);
+        countUp(statEl('activeUsers'), data.activeUsers);
+        plural('commands', data.commands);
+        plural('activeUsers', data.activeUsers);
+        statEl('topCommand').textContent = topCommand(data.byCommand) || '\u2014';
+      })
+      .catch(function () {
+        /* API down — leave the section hidden rather than showing zeros */
+      });
+  }
+
   /* ---------- pixel starfield ---------- */
   var canvas = document.getElementById('stars');
   if (!canvas || reduced) { if (canvas) canvas.style.display = 'none'; return; }

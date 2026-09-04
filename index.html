@@ -34,6 +34,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://u.imageuploader.xyz" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="styles.css">
 
@@ -212,6 +213,19 @@
       </ul>
     </div>
     <div class="clouds" aria-hidden="true"><span></span><span></span><span></span></div>
+  </section>
+
+
+  <!-- LIVE STATS -->
+  <section id="stats" class="stats-line" hidden data-stats aria-label="Live bot stats">
+    <p class="reveal" aria-live="polite">
+      <i class="live-dot" aria-hidden="true"></i>
+      <strong data-stat="commands">0</strong> <span data-plural="commands">commands</span> run
+      <span class="sep" aria-hidden="true">&middot;</span>
+      <strong data-stat="activeUsers">0</strong> active <span data-plural="activeUsers">users</span>
+      <span class="sep" aria-hidden="true">&middot;</span>
+      <strong data-stat="topCommand">&mdash;</strong> used most
+    </p>
   </section>
 
   <!-- TUTORIAL -->

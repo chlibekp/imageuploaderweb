@@ -525,6 +525,7 @@ details p {
 /* anchors clear the sticky header */
 :target,
 .section,
+.stats-line,
 #top { scroll-margin-top: 80px; }
 
 /* nothing may push the page sideways */
@@ -646,4 +647,39 @@ code, .link, .terminal-body { overflow-wrap: anywhere; }
 /* pointer-coarse: no hover lift anywhere */
 @media (hover: none) {
   .step:hover, .cmd:hover, .card:hover, .brand:hover .brand-logo { transform: none; }
+}
+
+
+/* ---------- live stats line ---------- */
+.stats-line {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 clamp(18px, 4vw, 28px);
+}
+.stats-line[hidden] { display: none; }
+
+.stats-line p {
+  margin: 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 16px;
+}
+.stats-line strong {
+  color: var(--text);
+  font-weight: 600;
+}
+.stats-line .sep { margin: 0 10px; color: var(--line); }
+
+.live-dot {
+  display: inline-block;
+  width: 7px; height: 7px;
+  margin-right: 9px;
+  vertical-align: 1px;
+  background: #5ee08a;
+  border-radius: 50%;
+}
+
+@media (max-width: 640px) {
+  .stats-line p { font-size: 15px; line-height: 2; }
+  .stats-line .sep { margin: 0 7px; }
 }
